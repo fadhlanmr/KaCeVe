@@ -11,8 +11,7 @@ public class snakeOne : MonoBehaviour {
     bool rotated    = false;
 
 	public Vector2 Position;
-    public Sprite facing;
-	public Vector2 Velocity;
+	public float Velocity = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -53,13 +52,12 @@ public class snakeOne : MonoBehaviour {
 
         if (flagUp) {
 			transform.position = Position;
-			Position.y += 0.1F;
-            this.gameObject.transform.Rotate(0, 0, 0);
+			Position.y += 0.1F * Velocity;
 		}
 
 		if (flagDown) {
 			transform.position = Position;
-			Position.y -= 0.1F;
+			Position.y -= 0.1F * Velocity;
             if (!rotated){
                 this.gameObject.transform.Rotate(0, 0, 180);
                 rotated = true;
@@ -67,7 +65,7 @@ public class snakeOne : MonoBehaviour {
         }
         if (flagLeft) {
             transform.position = Position;
-            Position.x -= 0.1F;
+            Position.x -= 0.1F * Velocity;
             if (!rotated)
             {
                 this.gameObject.transform.Rotate(0, 0, 90);
@@ -77,7 +75,7 @@ public class snakeOne : MonoBehaviour {
         if (flagRight)
         {
             transform.position = Position;
-            Position.x += 0.1F;
+            Position.x += 0.1F * Velocity;
             if (!rotated)
             {
                 this.gameObject.transform.Rotate(0, 0, -90);

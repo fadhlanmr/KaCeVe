@@ -303,9 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c55eb82e73ae9a47a13df0450954887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 0, y: 0}
-  facing: {fileID: 0}
-  Velocity: {x: 0, y: 0}
+  Position: {x: 5, y: 10}
+  Velocity: 5
 --- !u!212 &1949051509
 SpriteRenderer:
   m_ObjectHideFlags: 0
